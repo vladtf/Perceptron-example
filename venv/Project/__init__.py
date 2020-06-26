@@ -34,9 +34,26 @@ print(synaptic_weights)
 print("Results:")
 print(outputs)
 
-# Test
-new_inputs = np.array([1,1,0])
-output = sigmoid(np.dot(new_inputs,synaptic_weights))
+# # Test
+# new_inputs = np.array([1,1,0])
+# output = sigmoid(np.dot(new_inputs,synaptic_weights))
+#
+# print("New case:")
+# print(output)
 
-print("New case:")
-print(output)
+# New tests
+while True:
+    print("Inser new valuse (n to exit): ")
+    data = input()
+
+    if data == "n":
+        break
+
+    tokens = list(map(int, data.split(" ")))
+    new_inputs = np.array([tokens[0], tokens[1], tokens[2]])
+    output = sigmoid(np.dot(new_inputs, synaptic_weights))
+
+    print("Excpected result: ")
+    print(output)
+
+print("App finished")
